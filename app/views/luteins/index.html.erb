@@ -1,0 +1,31 @@
+<h1>Listing luteins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th>Commend</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @luteins.each do |lutein| %>
+      <tr>
+        <td><%= lutein.name %></td>
+        <td><%= lutein.description %></td>
+        <td><%= lutein.picture %></td>
+        <td><%= lutein.commend %></td>
+        <td><%= link_to 'Show', lutein %></td>
+        <td><%= link_to 'Edit', edit_lutein_path(lutein) %></td>
+        <td><%= link_to 'Destroy', lutein, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lutein', new_lutein_path %>
